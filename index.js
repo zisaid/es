@@ -19,9 +19,8 @@ elasticsearch.index = function (index, type, id, body) {
       type: type,  //相当于table
       id: id,// 数据到唯一标示，id存在则为更新，不存在为插入
       body: body //文档内容
-    }).then((error, response) => {
-      if (error) reject(error);
-      else resolve(response);
+    }).then(response => {
+      resolve(response);
     }).catch(err => {
       reject(err);
     });
